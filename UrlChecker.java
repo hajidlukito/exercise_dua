@@ -1,21 +1,22 @@
-package
-import java
-import java
-import java
+package chapter02;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-class urlcjhecker
-	public void
-pattern my[pattern
-		scanner
-		sout
-		string
-		matcher
-		boolean
+class UrlChecker {
+    public static void main(String[] args){
+        Pattern Mypattern = Pattern.compile("^((https?|ftp)://|(www|ftp)\\.) [a-z0-9-]+(\\.[a-z0-9-]+[a-z]+)+([/?].*)?$");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the Url to be checked: ");
+        String name = input.nextLine();
+        Matcher Mymatcher = Mypattern.matcher(name);
+        Boolean Myboolean = Mymatcher.matches();
 
-	if
-		sout
-			else
-		sout
-}
-}
+        if(Myboolean == true) {
+            System.out.println("URL is correct, you can go ahead with this");
+        }
+        else {
+            System.out.println("URL is incorrect, please check your Url.");    
+        }
+            }
 }
